@@ -1,0 +1,13 @@
+{
+  "name": "multibackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "curl_spring_backend_list_ships": "curl localhost:8080/space/",
+    "curl_spring_backend_create_ship1": "curl -H 'Content-Type: application/json' -d @test_data/new_ship1.json localhost:8080/space/",
+    "curl_spring_backend_create_ship2": "curl -H 'Content-Type: application/json' -d @test_data/new_ship2.json localhost:8080/space/"
+  },
+  "author": "",
+  "license": "ISC"
+}
