@@ -2,6 +2,7 @@ package com.codeinvestigator
 
 import com.codeinvestigator.plugins.configureRouting
 import com.codeinvestigator.plugins.configureSerialization
+import com.codeinvestigator.space.DatabaseFactory
 import io.ktor.server.application.*
 
 //fun main() {
@@ -11,6 +12,7 @@ import io.ktor.server.application.*
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 fun Application.module() {
+    DatabaseFactory.init()
     configureSerialization()
     configureRouting()
 }

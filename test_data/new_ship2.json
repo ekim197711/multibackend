@@ -1,6 +1,6 @@
 {
   "model": "Hawk",
   "captain": "Katja",
-  "fuelleft": 72.13,
+  "fuelLeft": 72.13,
   "destination": "moon"
 }
