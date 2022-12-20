@@ -20,6 +20,17 @@ fun Application.configureRouting() {
             val ship = dao.addNewSpaceShip(newShip)
             call.respond(ship as SpaceShip)
         }
+        delete("/spaceship/{id}") {
+            val idOfShip = call.parameters.get("id")?.toInt()
+            val ship = dao.deleteSpaceShip(idOfShip!!)
+            call.respond(dao.allSpaceShips())
+        }
+        put("/spaceship") {
+            val editShip = call.receive<SpaceShip>()
+            dao.editSpaceShip(editShip.id!!, editShip.model, editShip.fuelLeft, editShip.destination, editShip.captain)
+            val afterEdit = dao.spaceShip(editShip.id)
+            call.respond(afterEdit!!)
+        }
     }
 }
 

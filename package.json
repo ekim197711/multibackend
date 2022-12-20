@@ -1,16 +1,12 @@
 {
-  "name": "multibackend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "curl_spring_backend_list_ships": "curl localhost:8080/space/",
-    "curl_spring_backend_create_ship1": "curl -H 'Content-Type: application/json' -d @test_data/new_ship1.json localhost:8080/space/",
-    "curl_spring_backend_create_ship2": "curl -H 'Content-Type: application/json' -d @test_data/new_ship2.json localhost:8080/space/",
+    "spring_curl_backend_list_ships": "curl localhost:8080/space/",
+    "spring_curl_backend_create_ship1": "curl -H 'Content-Type: application/json' -d @test_data/new_ship1.json localhost:8080/space/",
+    "spring_curl_backend_create_ship2": "curl -H 'Content-Type: application/json' -d @test_data/new_ship2.json localhost:8080/space/",
     "ktor_curl_ships": "curl localhost:8090/spaceship",
-    "ktor_curl_ktor_create_ship": "curl -v -H 'Content-Type: application/json' -d @test_data/new_ship2.json localhost:8090/spaceship",
+    "ktor_curl_create_ship": "curl -v -H 'Content-Type: application/json' -d @test_data/new_ship2.json localhost:8090/spaceship",
+    "ktor_curl_edit_ship": "curl -v -X PUT -H 'Content-Type: application/json' -d @test_data/edit_ship1.json localhost:8090/spaceship",
+    "ktor_curl_delete_ship": "curl -v -X DELETE localhost:8090/spaceship/3",
     "ktor_curl_hello_ktor": "curl localhost:8090"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
